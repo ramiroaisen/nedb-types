@@ -255,8 +255,8 @@ export default class Nedb<T> extends EventEmitter {
     find(filter: FilterQuery<Document<T>>, projection: Projection<Document<T>>, fn?: (err: OptionalError, documents: Document<T>[]) => void): void;
     find(filter: FilterQuery<Document<T>>, fn?: (err: OptionalError, documents: Document<T>[]) => void): void;
 
-    findOne(filter: FilterQuery<Document<T>>, projection?: Projection<Document<T>>, fn?: (err: OptionalError, document: Document<T>) => void): void;
-    findOne(query: FilterQuery<Document<T>>, fn?: (err: OptionalError, document: Document<T>) => void): void;
+    findOne(filter: FilterQuery<Document<T>>, projection?: Projection<Document<T>>, fn?: (err: OptionalError, document: Document<T> | null) => void): void;
+    findOne(query: FilterQuery<Document<T>>, fn?: (err: OptionalError, document: Document<T> | null) => void): void;
 
     
     update(
