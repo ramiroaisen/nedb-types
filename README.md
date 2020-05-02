@@ -22,6 +22,6 @@ Now you have intellisense and all that good stuff
 
 ### Screenshots
 
-![Nedb Typescript Definitions](./example.png)
+![Nedb Typescript Definitions](screenshots/example.png)
 
-![Nedb Typescript Definitions](./example-error.png)
+![Nedb Typescript Definitions](screenshots/example-error.png)
