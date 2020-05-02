@@ -1,9 +1,5 @@
 # Nedb Typescript Definitions
 
-![Nedb Typescript Definitions](./example.png)
-
-![Nedb Typescript Definitions](./example-error.png)
-
 ---
 ### Install
 ```sh
@@ -23,3 +19,9 @@ const collection = new Nedb<MyAwesomeTypeHere>();
 Now you have intellisense and all that good stuff
 
 ---
+
+### Screenshots
+
+![Nedb Typescript Definitions](./example.png)
+
+![Nedb Typescript Definitions](./example-error.png)
