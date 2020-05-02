@@ -10,7 +10,14 @@
     "type": "git",
     "url": "git+https://github.com/ramiroaisen/nedb-types.git"
   },
-  "keywords": ["nedb types", "types nedb", "typescript nedb", "nedb typescript", "nedb typings", "typings nedb"],
+  "keywords": [
+    "nedb types",
+    "types nedb",
+    "typescript nedb",
+    "nedb typescript",
+    "nedb typings",
+    "typings nedb"
+  ],
   "author": "ramiroaisen <ramiroaisen@gmail.com>",
   "license": "ISC",
   "bugs": {

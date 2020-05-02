@@ -1,13 +1,11 @@
-// Type definitions for  1.8
+// Type definitions for NeDB 1.8
 // Nedb: https://github.com/louischatriot/nedb
 // Definitions: https://github.com/ramiroaisen/nedb-types
-// TypeScript Version: 2.3
+// TypeScript Version: 3.8
 
 /// <reference types="node" />
 
 import { EventEmitter } from 'events';
-
-export as namespace Nedb;
 
 export type Document<T> = T & {
     _id: string
@@ -65,8 +63,8 @@ export type FilterQuery<Doc> =
     Partial<{[K in keyof Deep<Doc>]: Deep<Doc>[K] | QueryOperators<Deep<Doc>[K]>}>
 
 export type SortQuery<Doc> =
-    Partial<Record<keyof Doc, -1 | 1>> &
-    Partial<Record<DeepKey<Doc>, 1 | -1>>;
+    Record<keyof Doc, -1 | 1> &
+    Record<DeepKey<Doc>, 1 | -1>;
 
 export type Projection<Doc> =
     (
@@ -250,8 +248,8 @@ export default class Nedb<T> extends EventEmitter {
     count(filter: FilterQuery<Document<T>>, fn: (err: OptionalError, n: number) => void): void;
     count(filter: FilterQuery<Document<T>>): CountCursor;
 
-    find(filter: FilterQuery<Document<T>>, projection?: Projection<Document<T>>): Cursor<T>;
     find(filter: FilterQuery<Document<T>>, projection: Projection<Document<T>>, fn: (err: OptionalError, documents: Document<T>[]) => void): void;
+    find(filter: FilterQuery<Document<T>>, projection?: Projection<Document<T>>): Nedb.Cursor<T>;
     find(filter: FilterQuery<Document<T>>, fn: (err: OptionalError, documents: Document<T>[]) => void): void;
 
     findOne(filter: FilterQuery<Document<T>>, projection: Projection<Document<T>>, fn: (err: OptionalError, document: Document<T>) => void): void;
@@ -298,7 +296,6 @@ export default class Nedb<T> extends EventEmitter {
 export type Cursor<T> = {
     skip(n: number): Cursor<T>;
     limit(n: number): Cursor<T>;
-    sort(sort: SortQuery<T>): Cursor<T>;
     projection(projection: Projection<Document<T>>): Cursor<T>;
     exec(fn: (err: OptionalError, documents: Document<T>[]) => void): void;
 }

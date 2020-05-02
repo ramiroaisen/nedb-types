@@ -1,1 +1,25 @@
-# nedb-types
+# Nedb Typescript Definitions
+
+![Nedb Typescript Definitions](./example.png)
+
+![Nedb Typescript Definitions](./example-error.png)
+
+---
+### Install
+```sh
+npm i ramiroaisen/nedb-types
+```
+
+
+
+---
+
+### Usage
+Types will be installed to @types/nedb so that's all you need to do
+```typescript
+import Nedb from "nedb"
+const collection = new Nedb<MyAwesomeTypeHere>();
+```
+Now you have intellisense and all that good stuff
+
+---
