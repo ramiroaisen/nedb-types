@@ -1,0 +1,26 @@
+{
+  "name": "@types/nedb",
+  "version": "0.0.1",
+  "description": "Nedb typescript definitions",
+  "types": "index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ramiroaisen/nedb-types.git"
+  },
+  "keywords": ["nedb types", "types nedb", "typescript nedb", "nedb typescript", "nedb typings", "typings nedb"],
+  "author": "ramiroaisen <ramiroaisen@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ramiroaisen/nedb-types/issues"
+  },
+  "homepage": "https://github.com/ramiroaisen/nedb-types#readme",
+  "dependencies": {
+    "@types/node": "^13.13.4"
+  },
+  "peerDependencies": {
+    "nedb": "*"
+  }
+}
