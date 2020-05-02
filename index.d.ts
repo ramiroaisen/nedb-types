@@ -22,16 +22,18 @@ type Deep<T> = {[K: string]: any};
 type DeepKey<T> = keyof Deep<T>;
 type DeArray<A> = A extends (infer T)[] ? T : never;
 
-type Optional<T, OptionalKeys> = {
-    [K in keyof T]: 
-        K extends OptionalKeys ? 
-            T[K] | void : 
-            T[K]
-}
+/*
+type Optional<T extends Record<string, any>, OptionalKeys extends string> =
+    {[K in OptionalKeys]?: T[K]} &
+    {[K in Exclude<keyof T, OptionalKeys>]: T[K]};
+*/
 
-export type UpdateDoc<Doc> = Optional<Exclude<Doc, "_id">, "createdAt" | "updatedAt">
+type Optional<T extends Record<string, any>, OptionalK extends string> =
+    Omit<T, OptionalK> &
+    {[K in OptionalK]?: T[K]}
+
+export type UpdateDoc<Doc> = Partial<Omit<Doc, "_id">>;
 export type InsertDoc<Doc> = Optional<Doc, "_id" | "createdAt" | "updatedAt">
-
 
 export type QueryOperators<T> =
     Partial<{
@@ -81,8 +83,7 @@ export type Projection<Doc> =
 
 export type UpdateOperators<Doc> = {
     $set:
-        { ["_id"]: never } &
-        { [K in keyof Doc]?: Doc[K] } &
+        { [K in keyof Omit<Doc, "_id">]?: Doc[K] } &
         Record<DeepKey<Doc>, any>
 
     $unset:
