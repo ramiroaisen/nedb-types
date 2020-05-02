@@ -1,4 +1,5 @@
 # Nedb Typescript Definitions
+this is a work in progress if you have a comment open an issue in this repo
 
 ---
 ### Install
